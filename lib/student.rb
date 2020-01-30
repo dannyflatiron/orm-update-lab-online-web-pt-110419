@@ -57,7 +57,7 @@ end
     self.new(name, grade, id)
   end
 
-  def self.find_by_name(tank)
+  def self.find_by_name(name)
     sql = <<-SQL
       SELECT *
       FROM students
@@ -67,7 +67,7 @@ end
 
     DB[:conn].execute(sql, name).map do |row|
       self.new_from_db(row)
-    end
+    end.first
   end
 
 
