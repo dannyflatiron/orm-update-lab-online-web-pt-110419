@@ -50,7 +50,7 @@ end
 
   def self.new_from_db(row)
     # binding.pry
-    student = self.new
+    students = self.new
     students.id = row[0]
     students.name = row[1]
     students.grade = row[2]
