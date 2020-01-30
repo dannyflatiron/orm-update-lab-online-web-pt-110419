@@ -1,5 +1,5 @@
 require_relative "../config/environment.rb"
-
+require 'pry'
 class Student
 
   # Remember, you can access your database connection anywhere in this class
@@ -49,6 +49,7 @@ end
   end
 
   def self.new_from_db(row)
+    binding.pry
     student = self.new
     student.id = row[0]
     student.name = row[1]
